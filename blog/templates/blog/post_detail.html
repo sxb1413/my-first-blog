@@ -16,8 +16,8 @@
         {% endif %}
         </div>
         <div class="col-sm-6">
-                <img src="{% static 'images/loadingScreen.png'%}" alt="LoadingScreen">
-                <img src="{% static 'images/TPAIscrot.png'%}" alt="GamePlay">
+                <img src="{{ post.image1.url }}" alt="image1">
+                <img src="{{ post.image2.url }}" alt="image2">
         </div>
     </div>
 {% endblock %}

@@ -6,4 +6,4 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ('title', 'text', 'intro')
+        fields = ('title', 'text', 'intro', 'image1', 'image2')
