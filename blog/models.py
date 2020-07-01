@@ -19,3 +19,19 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Cv(models.Model):
+    name = models.TextField(default='')
+    phone_number = models.TextField(default='')
+    email = models.TextField(default='')
+    intro = models.TextField(default='')
+    education = models.TextField(default='')
+    experience = models.TextField(default='')
+    skills = models.TextField(default='')
+    interests = models.TextField(default='')
+
+    def publish(self):
+        self.save()
+
+    def __str__(self):
+        return self.title
