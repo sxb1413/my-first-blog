@@ -1,19 +1,25 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 {% block content %}
-    <div class="post">
-        <div class="col-sm-6">
-       	{% if user.is_authenticated %}
-     		<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-		{% endif %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.intro|linebreaksbr }}</p> ###################change to new form for cv########################
-        <p>{{ post.text|linebreaksbr }}</p>
-        {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-        {% endif %}
-        </div>
+    <div class="cv">
+        <form method="POST">
+            <input id="cv_name" placeholder="Name" />
+            <input id="cv_phone" placeholder="Phone Number" />
+            <input id="cv_email" placeholder="Email Address" />
+            <input id="cv_intro" placeholder="Intro" />
+            <input id="cv_education" placeholder="Education" />
+            <input id="cv_experience" placeholder="Experience" />
+            <input id="cv_skills" placeholder="Skills" />
+            <input id="cv_interests" placeholder="Interests" />
+            {% csrf_token %}
+        </form>
+        {{ Cv.name }}
+        {{ Cv.phone_number }}
+        {{ Cv.email }}
+        {{ Cv.intro }}
+        {{ Cv.education }}
+        {{ Cv.experience }}
+        {{ Cv.skills }}
+        {{ Cv.interests }}
     </div>
 {% endblock %}
