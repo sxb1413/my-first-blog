@@ -41,9 +41,10 @@ def post_edit(request, pk):
 
 def cv(request):
     if request.method == "POST":
-        Cv.objects.create(name=request.POST['cv_name'], phone_number=['cv_phone'], email=['cv_email'], intro=['cv_intro'],
-            education=['cv_education'], experience=['cv_experience'], skills=['cv_skills'], interests=['cv_interests'])
-        return redirect('/cv')
+        Cv.objects.create(name=request.POST['cv_name'], phone_number=request.POST['cv_phone'], email=request.POST['cv_email'],
+         intro=request.POST['cv_intro'], education=request.POST['cv_education'], experience=request.POST['cv_experience'],
+         skills=request.POST['cv_skills'], interests=request.POST['cv_interests'])
+        return redirect('/cv.html')
 
     cv_total = Cv.objects.all()
     return render(request, 'blog/cv.html', {'cv_total':cv_total})

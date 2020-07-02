@@ -3,23 +3,30 @@
 {% block content %}
     <div class="cv">
         <form method="POST">
-            <input id="cv_name" placeholder="Name" />
-            <input id="cv_phone" placeholder="Phone Number" />
-            <input id="cv_email" placeholder="Email Address" />
-            <input id="cv_intro" placeholder="Intro" />
-            <input id="cv_education" placeholder="Education" />
-            <input id="cv_experience" placeholder="Experience" />
-            <input id="cv_skills" placeholder="Skills" />
-            <input id="cv_interests" placeholder="Interests" />
+            <input name="cv_name" id="cv_name" placeholder="Name" />
+            <input name="cv_phone" id="cv_phone" placeholder="Phone Number" />
+            <input name="cv_email" id="cv_email" placeholder="Email Address" />
+            <input name="cv_intro" id="cv_intro" placeholder="Intro" />
+            <input name="cv_education" id="cv_education" placeholder="Education" />
+            <input name="cv_experience" id="cv_experience" placeholder="Experience" />
+            <input name="cv_skills" id="cv_skills" placeholder="Skills" />
+            <input name="cv_interests" id="cv_interests" placeholder="Interests" />
+            <input type="submit" id="cv_save" value="Save" />
             {% csrf_token %}
         </form>
-        {{ Cv.name }}
+
+        <table id="cv_table">
+            {% for field in cv_total %}
+                <tr><td>{{ field.name }}</td></tr>
+            {% endfor %}
+        </table>
+        <!-- {{ Cv.name }}
         {{ Cv.phone_number }}
         {{ Cv.email }}
         {{ Cv.intro }}
         {{ Cv.education }}
         {{ Cv.experience }}
         {{ Cv.skills }}
-        {{ Cv.interests }}
+        {{ Cv.interests }} -->
     </div>
 {% endblock %}
