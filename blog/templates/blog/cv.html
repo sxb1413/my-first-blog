@@ -2,31 +2,45 @@
 {% load static %}
 {% block content %}
     <div class="cv">
-        <form method="POST">
-            <input name="cv_name" id="cv_name" placeholder="Name" />
-            <input name="cv_phone" id="cv_phone" placeholder="Phone Number" />
-            <input name="cv_email" id="cv_email" placeholder="Email Address" />
-            <input name="cv_intro" id="cv_intro" placeholder="Intro" />
-            <input name="cv_education" id="cv_education" placeholder="Education" />
-            <input name="cv_experience" id="cv_experience" placeholder="Experience" />
-            <input name="cv_skills" id="cv_skills" placeholder="Skills" />
-            <input name="cv_interests" id="cv_interests" placeholder="Interests" />
+        <!-- <form method="POST">
+            <textarea rows = "1" cols = "60" name="cv_name" id="cv_name" placeholder="Name"></textarea>
+            <textarea rows = "1" cols = "60" name="cv_phone" id="cv_phone" placeholder="Phone Number"></textarea>
+            <textarea rows = "1" cols = "60" name="cv_email" id="cv_email" placeholder="Email Address"></textarea>
+            <textarea rows = "5" cols = "60" name="cv_intro" id="cv_intro" placeholder="Intro"></textarea>
+            <textarea rows = "5" cols = "60" name="cv_education" id="cv_education" placeholder="Education"></textarea>
+            <textarea rows = "5" cols = "60" name="cv_experience" id="cv_experience" placeholder="Experience"></textarea>
+            <textarea rows = "5" cols = "60" name="cv_skills" id="cv_skills" placeholder="Skills"></textarea>
+            <textarea rows = "5" cols = "60" name="cv_interests" id="cv_interests" placeholder="Interests"></textarea>
             <input type="submit" id="cv_save" value="Save" />
             {% csrf_token %}
-        </form>
+        </form> -->
 
         <table id="cv_table">
             {% for field in cv_total %}
-                <tr><td>{{ field.name }}</td></tr>
+                <tr><td><h3>Name:</h3></td></tr>
+                <tr><td><pre>{{ field.name }}</pre></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td><h3>Phone Number:</h3></td></tr>
+                <tr><td><pre>{{ field.phone_number }}</pre></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td><h3>Email:</h3></td></tr>
+                <tr><td><pre>{{ field.email }}</pre></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td><h3>About:</h3></td></tr>
+                <tr><td><pre>{{ field.intro }}</pre></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td><h3>Education:</h3></td></tr>
+                <tr><td><pre>{{ field.education}}</pre></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td><h3>Experience:</h3></td></tr>
+                <tr><td><pre>{{ field.experience }}</pre></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td><h3>Skills:</h3></td></tr>
+                <tr><td><pre>{{ field.skills }}</pre></td></tr>
+                <tr><td><br></td></tr>
+                <tr><td><h3>Interests:</h3></td></tr>
+                <tr><td><pre>{{ field.interests }}</pre></td></tr>
             {% endfor %}
         </table>
-        <!-- {{ Cv.name }}
-        {{ Cv.phone_number }}
-        {{ Cv.email }}
-        {{ Cv.intro }}
-        {{ Cv.education }}
-        {{ Cv.experience }}
-        {{ Cv.skills }}
-        {{ Cv.interests }} -->
     </div>
 {% endblock %}
