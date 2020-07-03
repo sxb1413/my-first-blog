@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="cv">
-        <form method="POST">
+        <!-- <form method="POST">
             <textarea rows = "1" cols = "164" name="cv_name" id="cv_name" placeholder="Name"></textarea><br>
             <textarea rows = "1" cols = "164" name="cv_phone" id="cv_phone" placeholder="Phone Number"></textarea><br>
             <textarea rows = "1" cols = "164" name="cv_email" id="cv_email" placeholder="Email Address"></textarea><br>
@@ -11,9 +11,11 @@
             <textarea rows = "5" cols = "164" name="cv_experience" id="cv_experience" placeholder="Experience"></textarea><br>
             <textarea rows = "5" cols = "164" name="cv_skills" id="cv_skills" placeholder="Skills"></textarea><br>
             <textarea rows = "5" cols = "164" name="cv_interests" id="cv_interests" placeholder="Interests"></textarea><br>
-            <input type="submit" id="cv_save" value="Save" />
+            <input type="submit" id="cv_save" value="Save"/>
             {% csrf_token %}
-        </form>
+        </form> -->
+
+                                                <!-- CHANGE THIS TABLE TO SOMETHING THAT WON'T GO OFF THE PAGE A MAKE THE USER SCROLL -->
 
         <table id="cv_table">
             {% for field in cv_total %}
